@@ -1,0 +1,2391 @@
+// common style
+$font-color:#4DB3FF;
+$margin-btm:10px;
+$font-white:#fff;
+$border-radius-five:5px;
+
+//弹窗公共样式
+$pop-header-height: 40px;
+$pop-border:1px solid #e5e9ea;
+$pop-bgcolor:#F3F7F9;
+$pop-header-fontSize:15px;
+$pop-margin-top:30vh;
+
+//按钮样式
+$btn-bgColor:#0092dd;//elementUi table button color
+$btn-bgColor-hover:#33A8E4;
+$btn-border-color:#0092dd;
+$btn-border: 1px solid #e6ebf5;
+$btn-height:30px;
+$btn-width:60px;
+$btn-margin-left:8px;
+$btn-font-size:12px;
+$btn-border-radius:4px;
+$btn-icon-width:40px;
+$btn-icon-height:34px;
+
+
+//查询输入框样式
+$quey-width:220px;
+
+//加载图标大小
+$icon-size:50px;
+
+// 单表elementUi Table
+$tab-border:1px solid #e6ebf5;
+$tab-font-color:#3e4148;
+$tab-font-size:12px;
+$tab-checkbox-size:18px;
+$tab-cell-height:32px;
+$tab-thead-font-color:#3c414c;
+$tab-thead-bgcolor:#F4F7F8;
+$tab-hover-bgcolor:#EEF1F6;
+$tab-height:calc(100vh - 190px);
+$tab-body-height: calc(100vh - 258px);
+$tab-border-other:2px solid #fff;
+
+//主子表表格样式
+$ms-tab-height: calc(100vh - 155px);
+$ms-min-width: 930px;
+$ms-tab-body-height: calc(100% - 35px);
+$ms-tabchild-body-height: calc(100% - 36px);
+
+// form style
+$form-bgcolor:#F4F7F8;
+$form-input-height:34px;
+$form-input-bgcolor:#F5F7FA;
+$form-input-space:2px;
+$form-font-size:12px;
+$form-border:1px solid #D8DCE5;
+$form-border-other:2px solid #fff;
+$form-font-color:#3e4148;
+$form-height-before:230px;
+$form-height-after:calc(100vh - 200px);
+$form-width-noTree:calc(100vw - 221px);
+$form-width-tree:calc(100vw - 401px);
+$form-height-content:33px;
+
+//树表弹窗样式
+$pop-tree-width:350px;
+$pop-tree-height:450;
+$pop-tree-body-height:360px;
+
+//确认删除样式
+$pop-delete-width:450px;
+
+//弹窗表格样式
+$pop-table-heightOut:500px;
+$pop-table-height:314px;
+$pop-table-width: 800px;
+$pop-table-bodyHight:402px;
+
+//多级弹窗树表样式
+$pop-multiTable-tabhegiht: 386px;
+
+//角色分配弹窗样式
+$pop-role: 516px;
+
+// 按钮样式
+#el_buttonStyle{
+    //table button color
+    .el-button--primary{
+      background: $btn-bgColor;
+      border-color: $btn-bgColor;
+      padding: 0;
+      height: $btn-height;
+      width: $btn-width;
+      border-radius: $btn-border-radius;
+      &:hover,&:focus{
+        background:$btn-bgColor-hover;
+        border-color: $btn-bgColor-hover;
+      }
+    } 
+    .el-button--primary:not(:last-child){
+      margin-right: $btn-margin-left;
+    }
+}
+
+
+  //高级查询输入框、按钮
+  .query{
+    text-align: right;
+    .el-input{
+      padding-right:4px; 
+      width: $quey-width;
+      vertical-align: bottom;
+    }
+    .el-input-group__append{
+      background: $btn-bgColor;
+      border-color: $btn-bgColor;
+      padding: 0 13px;
+      cursor: pointer;  
+      .el-icon-search{
+        font-size: 13px;
+        color: $font-white;
+        font-weight: bold;
+      }
+    }
+      //advanceRefer input
+    .el-input--small .el-input__inner{
+      height: $btn-height;
+    }
+
+    .el-button--primary{
+      background: $btn-bgColor;
+      border-color: $btn-bgColor;
+      padding: 0;
+      height: $btn-height;
+      width: $btn-width;
+      border-radius: $btn-border-radius;
+      &:hover,&:focus{
+        background:$btn-bgColor-hover;
+        border-color: $btn-bgColor-hover;
+      }
+    } 
+  }
+
+
+
+  //覆盖elementUi 单表 table 样式
+  #tableRow{  
+    min-width: 980px;
+      .top-row{
+      margin-bottom: $margin-btm;
+    }
+
+  //在表格中外加边框线
+  .tableOrPageSort{
+    border: $tab-border;
+    border-radius: $border-radius-five;
+  } 
+
+  .el-table__empty-block {
+    width: 100% !important;
+  }
+
+  //去除表格右侧边线
+  .el-table--border::after, .el-table--group::after{
+    width: 0;
+  }
+
+
+  //业务单表样式(相对主子表样式而言)
+  .singleTableStyle{
+    .el-table{
+      color: $tab-font-color;
+      font-size: $tab-font-size;
+      border-left: none;
+      border-bottom: none;
+      border-top: none;
+      height: $tab-height;
+      .el-table__header-wrapper{
+        table{
+          min-width: 100%;
+        }
+      }
+
+      
+         //适配表体内容
+      .el-table__body-wrapper{
+        height: $tab-body-height;
+        min-height: 200px;
+        table{
+          min-width: 100%;
+        }
+      }
+     
+      //内容居中对齐
+      th, td {
+        text-align: center;
+        padding: 0;
+        height: $tab-cell-height;
+        line-height: $tab-cell-height;
+      }
+
+      //去除elementUI table中添加的边框线
+      &::before{  
+        height: 0;
+      }
+
+
+      //覆盖排序图标样式
+      .caret-wrapper{
+      height: 29px;
+      }
+
+      //修改排序图标相对的位置
+      .sort-caret.ascending{
+        top: 3px;
+      }
+
+      .sort-caret.descending {
+        bottom: 3px;
+    }
+
+      //覆盖左侧checkbox选择框样式
+      .el-checkbox__inner{
+        width: $tab-checkbox-size;
+        height: $tab-checkbox-size;
+        border-radius:5px;
+        right: 3px;
+        &::after{
+          left: 6px;
+          top: 2px;
+          border-width: 2px;
+        }
+      }
+
+      //覆盖左侧checkbox选择框选择样式
+      .el-checkbox__input.is-checked .el-checkbox__inner, 
+      .el-checkbox__input.is-indeterminate .el-checkbox__inner{
+        background-color: $btn-bgColor;
+        border-color: $btn-bgColor;
+      }
+      
+      //覆盖左侧checkbox选择框hover样式
+      .el-checkbox__inner:hover {
+        border-color: $btn-bgColor;
+      }
+
+
+      //表头样式
+      thead {
+        color: $tab-thead-font-color;
+        tr:first-child{
+          background: $tab-thead-bgcolor;
+          // border-top: $tab-border;
+          th{
+            border-bottom-width: 2px;
+            height: $tab-cell-height;
+            line-height: $tab-cell-height;
+          }
+        }
+      }
+
+
+      //覆盖elementUI合计行的默认样式
+      .el-table__footer-wrapper{
+          position: relative;
+          bottom: -1px;
+          tbody td{
+            background:$tab-thead-bgcolor;
+            color: $tab-thead-font-color;
+            font-weight: 700;
+          }
+          tbody tr{
+            td:first-child{
+              border-right: none;
+              position: relative;
+              div{
+                width: 76px;
+                position: absolute;
+                z-index: 20;
+                bottom: 2px;
+                background: $tab-thead-bgcolor;
+              }
+            }
+          }
+       }
+    //修改和删除按钮
+      .btn-editor,.btn-delete{
+        border: none;
+        background: none;
+        color: $font-color;
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+    
+      //表格鼠标经过hover背景样式
+      .el-table--striped .el-table__body tr.el-table__row--striped.current-row td,
+      .el-table__body tr.current-row>td,.el-table__body tr.hover-row.current-row>td,
+      .el-table__body tr.hover-row .el-table__row--striped.current-row>td,
+      .el-table__body tr.hover-row.el-table__row--striped>td,
+      .el-table__body tr.hover-row>td {
+        background:$tab-hover-bgcolor;
+      }
+        
+
+      //去除多余边框线
+      .el-table--border::after{
+        height: 0;
+      }
+    
+      //修改加载图标大小
+      .el-icon-loading{
+        font-size: $icon-size;
+      }
+      
+     }
+  
+    }
+  }
+
+
+  //表格底部页码样式
+.sort-page{
+  .el-pagination__total{
+    position: absolute;
+    left: 20px;
+  }
+  .el-pagination__sizes{
+    position: absolute;
+    left:112px;
+  }
+  .btn-next{
+    float: right;
+  }
+  .btn-prev{
+    float: right;
+  }
+  .el-pagination__jump{
+    float: right;
+  }
+  .el-pager{
+    float: right;
+    .active{
+      background: $btn-bgColor !important;
+    }
+
+  }
+
+  //覆盖页码字体样式
+  .el-pagination span:not([class*=suffix]){
+    font-size: $tab-font-size;
+  }
+  .el-input__inner{
+    font-size: $tab-font-size !important;
+    height: 20px !important;
+    width: 80% !important;
+    padding-left: 5px !important;
+  }
+
+  .el-pager li{
+    font-size: $tab-font-size;
+    height: 25px;
+    line-height: 25px;
+    min-width: 25px !important;
+  }
+
+  //修改页数选择框图标的位置
+  .el-input__suffix{
+    left: 30px;
+  }
+    // sort background 
+  .el-pagination.is-background .btn-next, 
+  .el-pagination.is-background .btn-prev, 
+  .el-pagination.is-background .el-pager li{
+    background: #fff;
+  }
+}
+
+
+
+
+//form表单样式
+#formSubmitStyle{
+  min-width: 980px;
+ .top-row{  
+   margin-bottom: $margin-btm;
+ }
+
+ //不含有树表表单宽度
+ .formAuto{
+   min-width: 930px;
+    width: $form-width-noTree;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: $form-height-before;  
+    border: $form-border;
+    border-radius: $border-radius-five;
+    margin-bottom: 5px;
+    padding: 0px 2px 0 0;
+    transition: height .5s linear;
+    box-shadow: 0 0 0 #e6ebf5, 0 0 0 #e6ebf5, 0 5px 5px #e6ebf5;
+  .formAutoChild{
+    width: $form-width-noTree;
+    transition: height .5s linear;
+  }
+ }
+
+  //含有树表表单宽度
+  .formAutoTree{
+    width: $form-width-tree;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height:  $form-height-before;  
+    border: 1px solid #D8DCE5;
+    border-radius: $border-radius-five;
+    margin-bottom: 5px;
+    box-shadow: 0 0 0 #e6ebf5, 0 0 0 #e6ebf5, 0 5px 5px #e6ebf5;
+    padding: 0px;
+    transition: height .5s linear;
+    min-width: 930px;
+  .formAutoChild{
+    width: $form-width-tree;
+    transition: height .5s linear;
+  }
+ }
+
+
+ .upDown{
+  .el-icon-arrow-down:before{
+    content: "\E605" !important;
+  }
+}
+
+.upDownBefore{
+  button{
+    border-radius:$border-radius-five;
+  }
+}
+
+// //菜单api管理表单样式
+.apiLimit{
+    overflow: hidden;
+  .apiCol{
+      height:$form-input-height*2;
+      .apiLabel{
+        display: inline-block;
+        width: 8.1% !important;
+        height: $form-input-height*2;
+        line-height: $form-input-height*2;
+        text-align: right;
+        background: $form-bgcolor;
+        font-size:$form-font-size;
+        color: $form-font-color;
+        margin-right: $form-input-space;
+    }
+
+    .apiManager{
+      display: inline-block;
+      position: absolute;
+      width: 100%;
+      height:$form-input-height*2;
+      .apiContent{
+        display: inline-block;
+        height: $form-input-height*2;
+        width: calc(100% - 8.5%);
+        border: $form-border;
+        border-radius: $border-radius-five;
+        padding: 5px;
+        vertical-align: top;
+        background: $form-input-bgcolor;
+        span{
+          margin: 0 5px;
+        }
+      }
+      .apiBtn{
+        display: inline-block;
+        height: $form-input-height*2;
+        width: $btn-icon-width;
+        background: $btn-bgColor;
+        text-align: center;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        cursor: pointer;
+        border: 1px;
+        text-align: left;
+        padding: 0;
+        text-align: center;
+        float: right;
+        position: relative;
+        left: 6px;
+        bottom: 6px;
+        i{
+          color: $font-white;
+        }
+      }
+      .is-disabled{
+        cursor: not-allowed;
+      }
+    }
+    .notAllowClick{
+      position: absolute;
+      width: 80%;
+      height:$form-input-height*2;
+      top: 0;
+      left: 7.2%;
+      cursor: not-allowed;
+    }
+  }
+}
+
+ // form commen
+ form{
+    overflow: auto;
+    height: calc(100vh - 155px);
+    border: 1px solid #d8dce5;
+    border-radius: 5px;
+   //overall style
+   .el-form-item{
+    & > label{
+      padding: 0;
+      width: 25% !important;
+      background:$form-bgcolor;
+      height:  $form-input-height; 
+      border-right: $form-border-other;
+      font-size: $form-font-size;
+      color: $form-font-color;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+   }
+
+   //设置表单中每行的下右间距
+   .el-col{
+     margin-bottom: $form-input-space;
+   }
+
+   //修改布局方式(本应用el-col-8布局，但直接修改其默认宽度)
+   .el-col-7 {
+     width: 33.33333%;
+   }
+   .el-col-21 {
+     width: 100%;
+     overflow: hidden;
+   }
+   .el-form-item{
+     margin: 0;
+     width: 100%;
+     padding-right: $form-input-space;
+     .el-input-group{
+      input{
+        background: $form-input-bgcolor;
+      }
+     }
+     .el-input-group__append{
+      .el-button{
+       background: $btn-bgColor;
+       border-color: $btn-bgColor;
+       color: $font-white;
+       font-size: $btn-font-size;
+       padding: 0px;
+       height: $btn-icon-height;
+       width: $btn-icon-width;
+       border: 1px solid $btn-bgColor;
+       position: relative;
+       bottom: 1px;
+       border-radius: 0 5px 5px 0;
+      }
+    }
+   }
+   //时间选择器
+   .el-date-editor{
+      width: 100%;
+   }
+
+   .el-form-item__content{
+     line-height: $form-height-content;
+     height: $form-height-content;
+     width: 75%;
+     input{
+       height: $form-input-height;
+       font-size: $form-font-size;
+     }
+     .el-select{
+      width: 100%;
+      input{
+        height: $form-input-height !important;
+      }
+    }
+     .el-input-number{
+       width: 100%;
+       line-height: $form-height-content;
+       .el-input-number__decrease,.el-input-number__increase{
+         height: $form-input-height;
+         top: 0px;
+         border-top: none;
+         line-height: $form-height-content;
+         background: $btn-bgColor;
+         border-color: $btn-bgColor;
+         color: $font-white;
+         font-size: $btn-font-size;
+         font-weight: bold;
+         padding: 0 10px;
+         border-color: $btn-bgColor;
+       }
+       input{
+         height: $form-input-height;
+       }
+     }
+   }
+
+     //textarea
+     .textarea{
+       .el-form-item{
+         position: relative;
+         background: $form-bgcolor;
+         vertical-align: middle;
+         .el-form-item__label{
+           width:8.3% !important;
+           position: absolute;
+           top: 25%;
+           border-right: 0;
+         }
+         .el-form-item__content{
+           width: 100%;
+           height: auto;
+         }
+         .textarea-border{
+           position: relative;
+           left: 8.2%;
+           border-left: $form-border-other;
+           textarea{
+             width: 91.80%;
+             position: relative;
+             min-height: $form-input-height*3 !important;
+             padding: 0;
+             font-size: $form-font-size;
+             overflow: hidden;
+           }
+         }
+       }
+    }
+      //input图标
+      .el-input__icon{
+        line-height: $form-input-height;
+      }
+ }
+
+
+//  表单table样式
+ .el-table{
+  color: $tab-font-color;
+  font-size: $tab-font-size;
+  border-left: none;
+  border-bottom: none;
+  border-top: none;
+
+  //覆盖左侧checkbox选择框样式
+.el-checkbox__inner{
+  width: $tab-checkbox-size;
+  height: $tab-checkbox-size;
+  border-radius: 4px;
+  &::after{
+    left: 6px;
+    top: 2px;
+    border-width: 2px;
+  }
+}
+
+//覆盖左侧checkbox选择框选择样式
+.el-checkbox__input.is-checked .el-checkbox__inner, 
+.el-checkbox__input.is-indeterminate .el-checkbox__inner{
+  background-color: $btn-bgColor;
+  border-color: $btn-bgColor;
+}
+
+//覆盖左侧checkbox选择框hover样式
+.el-checkbox__inner:hover {
+  border-color: $btn-bgColor;
+}
+  
+
+  //内容居中对齐
+  th, td {
+    text-align: center;
+    padding: 0;
+    height: $tab-cell-height;
+    line-height: $tab-cell-height;
+  }
+  
+  //去除elementUI table中添加的边框线
+  &::before{  
+    height: 0;
+  }
+
+
+  //覆盖排序图标样式
+  .caret-wrapper{
+  height: 29px;
+  }
+
+  //修改排序图标相对的位置
+  .sort-caret.ascending{
+    top: 3px;
+  }
+
+  .sort-caret.descending {
+    bottom: 3px;
+}
+ 
+  //表头样式
+  thead {
+    color: $tab-thead-font-color;
+    tr:first-child{
+      background: $tab-thead-bgcolor;
+      // border-top: $tab-border;
+      th{
+        border-bottom-width: 2px;
+        height: $tab-cell-height;
+        line-height: 31px;
+      }
+    }
+  }
+
+
+  //去除多余边框线
+  .el-table--border::after{
+    height: 0;
+  }
+}
+
+//表单中tab标签的样式覆盖
+.tabOrTableOutline{
+    border: $form-border;
+    width: 100%;
+    border-radius: 5px;
+      .databaseButton{
+    width: 100px !important;
+  }
+
+      //  为含有增减行和列的表单添加样式
+    .tabHeader{
+      line-height: 35px;
+      .el-tabs__header{
+        margin: 0 0 0 10px;
+        .el-tabs__nav-scroll{
+            div{
+                font-size: $btn-font-size;
+            }
+        }
+      }
+      //去除elementui默认边线
+      .el-tabs__nav-wrap::after{
+          height: 0;
+      }
+      .el-tabs__active-bar{
+          bottom: 5px;
+          width: 60px;
+      }
+      .el-tabs__content{
+        display: none;
+      }
+    }
+  }
+
+  //代码生成表单中表格的适配高度
+  .codeFormTabStyle{
+    .el-table{
+      height: calc(100vh - 433px);
+      overflow: auto;
+    }
+    .el-table__body-wrapper{
+      height: calc(100vh - 470px);
+      overflow: visible;
+    }
+    .el-table__empty-block{
+      width: 100% !important;
+    }
+  }
+
+
+
+
+  //修改表单中表格的共同样式
+  .FormTabStyle{
+    .el-table{
+      border-top: $tab-border;
+      //去除单元格内补
+      .cell{
+        padding: 0;
+        height: $form-input-height;
+        line-height: $form-height-content;
+      }
+
+      .el-table__header-wrapper{
+        table{
+          min-width: 100%;
+        }
+      }
+
+      .el-table__body-wrapper{
+        table{
+          min-width: 100%;
+        }
+      }
+    }
+
+    //表头
+    .el-table__header-wrapper{
+      padding-right: 1.5px;
+      padding-left: 1.5px;
+    }
+
+    //表尾
+    .el-table__body-wrapper{
+      padding-left: 1.5px;
+      padding-right: 1.5px;
+    }
+
+    thead{
+      tr:first-child th{
+        border-bottom-color: $font-white;
+        border-right: $tab-border-other;
+      }
+    }
+
+    tbody {
+      td{
+        background: $form-input-bgcolor;
+        border-bottom: $tab-border-other;
+        border-right: $tab-border-other;
+      }
+      .el-select{
+        width: 100%;
+      }
+      input{
+          height: $form-input-height;
+          font-size: $tab-font-size;  
+      }
+
+        //修改和删除按钮
+      .btn-editor,.btn-delete{
+        border: none;
+        background: none;
+        color: $font-color;
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+
+      //覆盖input后button样式
+       .el-input-group__append{
+        background: $btn-bgColor;
+        border-color: $btn-bgColor;
+        color: $font-white;
+        font-size: $btn-font-size;
+        padding: 0 13px;
+       }
+
+       //为只读input属性添加背景颜色
+       .el-input-group{
+         input{
+           background: $form-bgcolor;
+         }
+       }
+    }  
+  }
+}
+
+
+
+//主子表样式和布局
+#masterTableStyle{
+
+  .top-row{
+    margin-bottom: $margin-btm;
+    min-width: 930px;
+  }
+
+    //去除表格右侧边线
+    .el-table--border::after, .el-table--group::after{
+      width: 0;
+    }
+  
+    .el-table__empty-block{
+      width: 100% !important;
+    }
+
+    //|覆盖主子表中表格的默认样式
+      .el-table{
+        color: $tab-font-color;
+        font-size: $tab-font-size;
+        border-left: none;
+        border-bottom: none;
+        border-top: none;
+        .el-table__header-wrapper{
+          table{
+            min-width: 100%;
+          }
+        }
+
+        .el-table__body-wrapper{
+          table{
+            min-width: 100%;
+          }
+        }
+
+        //覆盖左侧checkbox选择框样式
+      .el-checkbox__inner{
+        width: $tab-checkbox-size;
+        height: $tab-checkbox-size;
+        right: 3px;
+        &::after{
+          left: 6px;
+          top: 2px;
+          border-width: 2px;
+        }
+      }
+
+      //覆盖左侧checkbox选择框选择样式
+      .el-checkbox__input.is-checked .el-checkbox__inner, 
+      .el-checkbox__input.is-indeterminate .el-checkbox__inner{
+        background-color: $btn-bgColor;
+        border-color: $btn-bgColor;
+      }
+      
+      //覆盖左侧checkbox选择框hover样式
+      .el-checkbox__inner:hover {
+        border-color: $btn-bgColor;
+      }
+
+        //内容居中对齐
+        th, td {
+          text-align: center;
+          padding: 0;
+          height: $tab-cell-height;
+          line-height: $tab-cell-height;
+        }
+        
+        //去除elementUI table中添加的边框线
+        &::before{  
+          height: 0;
+        }
+  
+  
+        //覆盖排序图标样式
+        .caret-wrapper{
+          height: 29px;
+        }
+  
+        //修改排序图标相对的位置
+        .sort-caret.ascending{
+          top: 3px;
+        }
+  
+        .sort-caret.descending {
+          bottom: 3px;
+      }
+       
+        //表头样式
+        thead {
+          color: $tab-thead-font-color;
+          tr:first-child{
+            background: $tab-thead-bgcolor;
+            // border-top: $tab-border;
+            th{
+              border-bottom-width: 2px;
+              height: $tab-cell-height;
+              line-height: 31px;
+            }
+          }
+            //去除全选框
+            .el-checkbox__inner{
+              display: none;
+            }
+        }
+  
+  
+        //覆盖elementUI合计行的默认样式
+        .el-table__footer-wrapper{
+            position: relative;
+            bottom: 0px;
+            tbody td{
+              background: $tab-thead-bgcolor;
+              color: $tab-font-color;
+              font-weight: 700;
+            }
+            tbody tr{
+              td:first-child{
+                border-right: none;
+                position: relative;
+                z-index: 10;
+                div{
+                  width: 76px;
+                  position: absolute;
+                  z-index: 20;
+                  bottom: 2px;
+                  background: $tab-thead-bgcolor;
+                }
+              }
+            }
+        }
+
+      //修改和删除按钮
+        .btn-editor,.btn-delete{
+          border: none;
+          background: none;
+          color: $font-color;
+          &:hover{
+            opacity: 0.8;
+          }
+        }
+      
+        //表格鼠标经过hover背景样式
+        .el-table--striped .el-table__body tr.el-table__row--striped.current-row td,
+        .el-table__body tr.current-row>td,.el-table__body tr.hover-row.current-row>td,
+        .el-table__body tr.hover-row .el-table__row--striped.current-row>td,
+        .el-table__body tr.hover-row.el-table__row--striped>td,
+        .el-table__body tr.hover-row>td {
+          background:$tab-hover-bgcolor;
+        }
+          
+  
+        //去除多余边框线
+        .el-table--border::after{
+          height: 0;
+        }
+      
+        //修改加载图标大小
+        .el-icon-loading{
+          font-size: $icon-size;
+        }
+      }
+
+
+      //在主表和子表之间添加外边框
+      .tableAndChildAll{
+        border: $tab-border;
+        height: $ms-tab-height;
+        border-radius: $border-radius-five;
+        overflow: hidden;
+        min-width: $ms-min-width;
+      }
+        
+      //主表样式外边框，添加阴影
+      .tableOrPageSort{
+        border-bottom: $tab-border;
+        margin-bottom: 5px;
+        box-shadow: 0 0 0 #e6ebf5,//左边阴影
+        0 0 0 #e6ebf5 ,//顶部阴影
+        0 2px 2px #e6ebf5 ; //底部阴影
+        
+
+    //调整主表高度适配
+    .el-table{
+      .el-table__body-wrapper{
+       height: $ms-tab-body-height;
+      }
+    }
+
+
+    .el-table--border::after, .el-table--group::after{
+      width: 0px;
+    }
+
+      //修改主表的复选框checkbox样式为单选框
+      .el-checkbox__inner{
+        width: $tab-checkbox-size;
+        height: $tab-checkbox-size;
+        border-radius: 50%;
+        right: 3px;
+        &::after{
+          left: 6px;
+          top: 2px;
+          border-width: 2px;
+        }
+      }
+   }
+
+
+  //子表样式
+  .childTableOrPageSort{
+    border-top: $tab-border;
+    border-bottom: none;
+    box-shadow: 0 0 0 #e6ebf5,//左边阴影
+    0 -2px 2px #e6ebf5 ,//顶部阴影
+    0 0 0 #e6ebf5 , //底部阴影
+    0 0 0 #e6ebf5; //右边阴影
+
+    //去除elementui内置的边框线
+    .el-table--border::after, .el-table--group::after{
+      width: 0;
+    }
+
+    //更多样式调整
+    .el-dropdown-link{
+      display: inline-block;
+      cursor: pointer;
+      height: $btn-height;
+      line-height: $btn-height;
+      width: $btn-width;
+      vertical-align: middle;
+      border: $btn-border;
+      border-radius: $border-radius-five;
+      box-sizing: border-box;
+      padding-right: 10px;
+      margin-right: 5px;
+      font-size: $btn-font-size;
+    } 
+
+    //调整子表高度适配
+    .el-table{
+      .el-table__body-wrapper{
+       height: $ms-tabchild-body-height !important;
+      }
+    }
+
+     //覆盖左侧checkbox选择框样式
+     .el-checkbox__inner{
+      width: $tab-checkbox-size;
+      height: $tab-checkbox-size;
+      border-radius:5px;
+      right: 0 !important;
+      &::after{
+        left: 6px;
+        top: 2px;
+        border-width: 2px;
+      }
+    }
+
+
+    //子表表头页签样式
+    .el-tabs__nav{
+      margin-left: 20px;
+      div{
+        font-size: 12px;
+      }
+    }
+
+    //去除标签页下的边线
+    .el-tabs__nav-wrap::after{
+      height: 0;
+    }
+
+    //调整页签下划线位置
+    .el-tabs__active-bar{
+      bottom: 5px;
+    }
+
+    //去除主子表表格页头标签切换多余内容
+   .masterChildRow{
+      margin: 0;
+      line-height: 40px;
+      .el-tabs__header{
+        margin: 0;
+      }
+      //去除标签切换content
+      .el-tabs__content{
+        display: none;
+      }
+
+    }
+  
+    //主子表页面跳转到表单，添加行样式
+    .FormTabStyle{
+      .el-table{
+        .cell{
+          padding: 0;
+          height: $form-input-height;
+          line-height: $form-height-content;
+          textarea{
+            font-size: $btn-font-size;
+            height: 34px !important;
+          }
+        }
+  
+        .el-table__header-wrapper{
+          padding-right: 3px;
+          box-sizing: content-box;
+          table{
+            min-width: 100%;
+          }
+          //修改排序图标
+          .el-icon-caret-top{
+            top: 4px;
+          }
+          .el-icon-caret-bottom{
+            top: 13px;
+          }
+        }
+  
+        .el-table__body-wrapper{
+          padding-right: 3px;
+          box-sizing: content-box;
+          table{
+            min-width: 100%;
+            .el-input{
+              width: 100%;
+            }
+            .el-select{
+              width: 100%;
+            }
+          }
+        }
+      }
+  
+  
+      thead{
+        .el-checkbox__inner{
+          display: block;
+          top: 8px;
+        }
+        tr:first-child th{
+          border-bottom-color: $font-white;
+          border-right: $tab-border-other;
+        }
+      }
+  
+      tbody tr{
+        & > td{
+          background: #F5F7FA;
+          border-bottom: $tab-border-other;
+          border-right: $tab-border-other;
+        }
+        & > .el-select{
+          width: 100%;
+        }
+        input{
+            height: 34px;
+            font-size: 12px;  
+        }
+  
+          //修改和删除按钮
+        .btn-editor,.btn-delete{
+          border: none;
+          background: none;
+          color: $font-color;
+          &:hover{
+            opacity: 0.8;
+          }
+        }
+  
+        //覆盖input后button样式
+          .el-input-group__append{
+            .el-button{
+              background: $btn-bgColor;
+              border-color: $btn-bgColor;
+              color: $font-white;
+              font-size: $btn-font-size;
+              padding: 0px;
+              height: 34px;
+              width: 41px;
+              border: 1px solid $btn-bgColor;
+              position: relative;
+              bottom: 1px;
+              border-radius: 0 5px 5px 0;
+            }
+          }
+  
+         //为只读input属性添加背景颜色
+         .el-input-group{
+           input{
+             background: $form-bgcolor;
+           }
+         }
+      }  
+
+      //覆盖grid选择器的因为组件影响样式
+      #table-pop-up{
+        thead tr:first-child th {
+          border-bottom-color: $form-bgcolor;
+          border-right: $tab-border;
+        }
+        tbody td {
+          background: $font-white;
+          border-bottom: $tab-border;
+          border-right: $tab-border;
+         }
+         .el-pagination .el-select .el-input{
+           width: 100px;
+         }
+         .el-pagination__editor.el-input{
+           width: 50px;
+         }
+       }
+    }
+  }
+}
+
+
+ //表单树表弹窗样式
+ #queryTemplate,.tree-pop-up{
+  .el-dialog{
+    width: $pop-tree-width !important;
+    height: $pop-tree-height;
+    overflow: hidden;
+    text-align: left;
+  }
+
+  .el-dialog__header {
+    padding: 0 20px;
+    height: $pop-header-height;
+    line-height:  $pop-header-height;
+    background: $pop-bgcolor;
+    border-bottom: $pop-border;
+    span{
+      font-size: $pop-header-fontSize;
+    }
+    button{
+      top: 0;
+      right: 10px;
+    }
+}
+
+  .el-dialog__body{
+    height: $pop-tree-body-height;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+    .up-down{
+      position: absolute;
+      z-index: 1200;
+      right: 28px;
+      top: 9px;
+    }
+    .ztreeOutline{
+      width: 330px;
+      border: none;
+      overflow-y: hidden;
+      input{
+        height: 28px !important;
+        width: 160px;
+        border-color: #D8DCE5;
+        background: #fff !important;
+      }
+      .ztree{
+        overflow: auto;
+        height: 297px;
+        width: 312px;
+      }
+    }
+      .el-input{
+        width: 100% !important;
+      }
+  }
+
+  .el-dialog__footer{
+    .el-button{
+      padding: 0;
+      font-size: $btn-font-size;
+      span{
+        height: $btn-height;
+        width: $btn-width;
+        display: inline-block;
+        line-height: $btn-height;
+      }
+    }
+    .el-button+.el-button{
+      margin-left: $btn-margin-left;
+    }
+    .el-button--primary{
+      background-color: $btn-bgColor;
+      border-color: $btn-bgColor;
+      }
+  }    
+}
+
+
+
+// 确认删除弹窗样式
+.delete-pop-up{ 
+  .el-dialog{
+    margin-top: $pop-margin-top !important;
+    width: $pop-delete-width !important;
+  }
+  .el-dialog__header{
+    padding: 10px 30px; 
+    background: $pop-bgcolor;
+    border-bottom: $pop-border;
+    span{
+      font-size: $pop-header-fontSize;
+    }
+  }
+  .el-dialog__body{
+    padding: 20px 10px;
+    .checking {
+      .el-form-item{
+        width: 100%;
+        label {
+          padding: 0;
+          width: 30% !important;
+          background: #F4F7F8;
+          height: 34px;
+          border-right: 2px solid #fff;
+          font-size: 12px;
+          color: #3e4148;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .el-form-item__content {
+          width: 70%;
+          line-height: 33px;
+          height: 33px;
+          .el-date-editor{
+            width: 100%;
+          }
+          .el-input__inner {
+            height: 33px;
+            font-size: 12px;
+          }
+          .el-input__icon {
+            line-height: 33px;
+          }
+          .el-input-group__append{
+            .el-button{
+              background: #0092dd;
+              border-color: #0092dd;
+              color: #fff;
+              font-size: 12px;
+              padding: 0px;
+              height: 34px;
+              width: 40px;
+              border: 1px solid #0092dd;
+              position: relative;
+              bottom: 1px;
+              border-radius: 0 5px 5px 0;
+            }
+          }
+        }
+      }
+      .el-form-item {
+        margin-bottom: 2px;
+      }
+    }
+  }
+  .el-dialog__footer{
+    .el-button{
+      padding: 0;
+      font-size: $btn-font-size;
+      span{
+        height: $btn-height;
+        width: $btn-width;
+        display: inline-block;
+        line-height: $btn-height;
+      }
+    }
+    .el-button+.el-button{
+      margin-left: $btn-margin-left;
+    }
+    .el-button--primary{
+      background-color: $btn-bgColor;
+      border-color: $btn-bgColor;
+      }
+  }
+
+  //覆盖原生的默认上传样式
+  .uploadFile{
+    form{
+      text-align: center;
+    }
+    .el-input{
+      width: 100%;
+      input{
+        height: $form-input-height;
+        font-size: $btn-font-size;
+      }
+      button{
+        font-size: $btn-font-size;
+        height: $form-input-height; 
+        padding: 10px 5px; 
+        &:hover,&:focus{
+          color: $font-color;
+        }
+      }
+    }
+    #file{
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+    }
+    label{
+      display: inline-block;
+      border: $form-border;
+      border-radius: $border-radius-five;
+      padding: 5px;
+      cursor: pointer;
+      font-size: 13px;
+      &:hover{
+        color: $font-color;
+        border-color: $font-color;
+      }
+     
+    }
+  }
+}
+
+
+
+//查询模板弹窗样式
+.query-pop-up{
+  .el-dialog{
+    width: 600px !important;
+      .el-dialog__header {
+        padding: 10px 18px 10px;
+        background: $pop-bgcolor;
+        border-bottom: $pop-border;
+        span{
+          font-size: $pop-header-fontSize;
+        }
+    }
+  }
+
+  .el-dialog__body{
+    padding: 10px;
+    overflow: hidden;
+  }
+  .el-dialog__footer{
+    padding: 0px 10px 10px;
+    .el-button{
+      padding: 0;
+      font-size: $btn-font-size;
+      span{
+        height: $btn-height;
+        width: $btn-width;
+        display: inline-block;
+        line-height: $btn-height;
+      }
+    }
+    .el-button+.el-button{
+      margin-left: $btn-margin-left;
+    }
+    .el-button--primary{
+      background-color: $btn-bgColor;
+      border-color: $btn-bgColor;
+      }
+  }
+
+  //导入表单样式
+  #importForm{
+    .text-right span{
+      display: block;
+      line-height: $form-input-height;
+      background: $form-bgcolor;
+      margin-right: 2px;
+    }
+    .el-select{
+      width: 100%;
+      input{
+        height: $form-input-height;
+      }
+    }
+  }
+}
+
+
+
+//查询模板样式
+#queryTemplate{
+  .el-dialog{
+    left: 180px;//修改查询模板中二级嵌套弹出框的向左偏移
+  }
+  width: 109%;
+  .tableName{
+    div{
+      background: $pop-bgcolor;
+      height: $form-input-height;
+      font-size: $form-font-size;
+      text-align: right;
+      line-height: $form-input-height;
+      margin-right: $form-input-space;
+    }
+  }
+  .singleSelect{
+    .el-select{
+      width: 100%;
+    }
+    input{
+      height: $form-input-height;
+      font-size: $form-font-size;
+    }
+  }
+  form{
+    label{
+      padding: 0;
+      width: 30% !important;
+      background:$form-bgcolor;
+      height:  $form-input-height; 
+      border-right: $form-border-other;
+      font-size: $form-font-size;
+      color: $form-font-color;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+
+    .serchInput{
+      input{
+        background: $form-bgcolor;
+      }
+    }
+    
+    .el-form-item{
+      margin: 0;
+      width: 100%;
+      input{
+        font-size: $form-font-size;
+      }
+      .el-input-group__append{
+        background: $btn-bgColor;
+        border-color: $btn-bgColor;
+        color: $font-white;
+        font-size: $btn-font-size;
+        padding: 0 13px;
+      }
+      //input图标
+      .el-input__icon{
+        line-height: $form-input-height;
+      }
+    }
+
+    .el-select{
+      width: 100%;
+    }
+    //时间选择框
+    .el-date-editor.el-input{
+      width: 100%;
+    }
+    .el-col{
+      margin-bottom: $form-input-space;
+      margin-right: $form-input-space;
+    }
+    .el-form-item__content{
+      width: 70%;
+      line-height: $form-height-content;
+      height: $form-height-content;
+      input{
+        height: $form-input-height;
+      }
+      //排序样式
+      .el-input-number{
+        width: 100%;
+        line-height: $form-height-content;
+        .el-input-number__decrease,
+        .el-input-number__increase{
+          height: $form-input-height;
+          top: 1px;
+          border-top: none;
+          line-height: $form-height-content;
+          background: $btn-bgColor;
+          border-color: $btn-bgColor;
+          color: $font-white;
+          font-size: $tab-font-size;
+          padding: 0 10px;
+          border-color: $font-color;
+        }
+      }
+    }  
+    //多选框样式
+    .textarea{
+      position: relative;
+      vertical-align: middle;
+      .el-form-item{
+        background: $form-bgcolor;
+      }
+      .el-form-item__label {
+        width: 14.6% !important;
+        position: absolute;
+        top: 25%;
+        border-right: 0;
+       }
+      .el-form-item__content{
+        height: auto;
+        width: 100%;
+        .textarea-border {
+          position: relative;
+          left: 14.6%;
+          border-left: $form-border-other;
+            textarea {
+              width: 85.5%;
+              position: relative;
+              min-height: 102px !important;
+              padding: 0;
+              font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+//表单表格弹窗样式
+#table-pop-up{
+  .el-dialog{
+    width: $pop-table-width !important;
+    height: $pop-table-heightOut;
+    overflow: hidden;
+  }
+
+  .el-dialog__header {
+    padding: 0 20px;
+    height: $pop-header-height;
+    line-height: $pop-header-height;
+    background: $pop-bgcolor;
+    border-bottom: $pop-border;
+    span{
+      font-size: $pop-header-fontSize;
+    }
+    button{
+      top: 0;
+      right: 10px;
+    }
+}
+
+
+  .el-dialog__body{
+    height: $pop-table-bodyHight;
+    overflow: hidden;
+    padding: 10px;
+    //在表格中外加边框线
+    .tableOrPageSort{
+      border: $tab-border;
+      border-radius: $border-radius-five;
+      box-shadow: none;
+      .el-col{
+        margin: 0;
+        background: $font-white;
+      }
+      .el-table{
+        height: $pop-table-height;
+      }
+    } 
+
+    //去除多余边框线
+    .el-table--border::after{
+      height: 0;
+      width:0 ;
+    }
+
+    //覆盖代码生成表单中弹窗表个基础表格height
+    .baseTypeStyle .el-table .el-table__body-wrapper {
+      height: 316px;
+    }
+        
+        
+    //弹窗搜索表单样式
+    .tab-telInput{
+      margin-bottom: $margin-btm;
+      .el-col{
+        background: $font-white !important;
+        text-align: left;
+      }
+      .el-input{
+          width: $quey-width !important;
+          vertical-align: bottom;
+          padding-right: 5px;
+         input{
+          background: $font-white !important;
+          height: $btn-height !important;
+         }
+      }
+      .columnName{
+          height: $btn-height;
+      }  
+    }
+
+
+
+    //表格样式
+    .el-table{
+      color: $tab-font-color;
+      font-size: $tab-font-size;
+      border-left: none;
+      border-bottom: none;
+      border-top: none;
+      //内容居中对齐
+       th, td {
+        text-align: center;
+        padding: 0;
+        height: 32px;
+        line-height: 32px;
+      }
+  
+        //表头样式
+        thead {
+          color: $tab-thead-font-color;
+          tr:first-child{
+            background: $tab-thead-bgcolor;
+            // border-top: $tab-border;
+            th{
+              border-bottom-width: 2px;
+              height: 32px;
+              line-height: 31px;
+            }
+          }
+           //去除全选框
+            .el-checkbox{
+              display: none;
+            }
+        }
+
+      //修改表格固定高度
+      .el-table__body-wrapper{
+        height: 280px;
+      }
+
+      //去除elementUI table中添加的边框线
+      &::before{  
+        height: 0;
+      }
+  
+  
+      //覆盖排序图标样式
+      .caret-wrapper{
+       height: 29px;
+      }
+  
+      //修改排序图标相对的位置
+      .sort-caret.ascending{
+        top: 3px;
+      }
+  
+      .sort-caret.descending {
+        bottom: 3px;
+    }
+
+
+        //修复选框checkbox样式为单选框
+        .el-checkbox__inner{
+          width: $tab-checkbox-size;
+          height: $tab-checkbox-size;
+          border-radius: 50%;
+          right:0px;
+          &::after{
+            left: 6px;
+            top: 2px;
+            border-width: 2px;
+          }
+        }
+
+      //调整中间勾选的图标位置
+        .el-table .el-checkbox__inner::after{
+          left: 6px;
+          top: 2px;
+        }
+
+      //覆盖左侧checkbox选择框选择样式
+      .el-checkbox__input.is-checked .el-checkbox__inner, 
+      .el-checkbox__input.is-indeterminate .el-checkbox__inner{
+        background-color: $btn-bgColor;
+        border-color: $btn-bgColor;
+      }
+      
+      //覆盖左侧checkbox选择框hover样式
+      .el-checkbox__inner:hover {
+        border-color: $btn-bgColor;
+      }
+  
+  
+      //表格鼠标经过hover背景样式
+      .el-table--striped .el-table__body tr.el-table__row--striped.current-row td,
+      .el-table__body tr.current-row>td,.el-table__body tr.hover-row.current-row>td,
+      .el-table__body tr.hover-row .el-table__row--striped.current-row>td,
+      .el-table__body tr.hover-row.el-table__row--striped>td,
+      .el-table__body tr.hover-row>td {
+        background:$tab-hover-bgcolor;
+      }
+        
+    }
+
+    //表格底部页码样式
+    .sort-page{
+
+      //覆盖页码字体样式
+      .el-pagination span:not([class*=suffix]){
+        font-size: $tab-font-size;
+      }
+      .el-input__inner{
+        font-size: $tab-font-size !important;
+        height: 20px !important;
+        width: 80% !important;
+        padding-left: 5px !important;
+        background: #fff !important;
+        border-color: #E6EBF5 !important;
+      }
+
+      .el-pager li{
+        font-size: $tab-font-size;
+        height: 25px;
+        line-height: 25px;
+        min-width: 25px !important;
+      }
+
+      //修改页数选择框图标的位置
+      .el-input__suffix{
+        left: 30px;
+      }
+
+        // sort background 
+      .el-pagination.is-background .btn-next, 
+      .el-pagination.is-background .btn-prev, 
+      .el-pagination.is-background .el-pager li{
+        background: #fff;
+      }
+    }
+
+  }
+
+  .el-dialog__footer{
+    padding: 10px;
+    .el-button{
+      padding: 0;
+      font-size: $btn-font-size;
+      span{
+        height: $btn-height;
+        width: $btn-width;
+        display: inline-block;
+        line-height: $btn-height;
+      }
+    }
+    .el-button+.el-button{
+      margin-left: $btn-margin-left;
+    }
+    .el-button--primary{
+      background-color: $btn-bgColor;
+      border-color: $btn-bgColor;
+      }
+  } 
+}
+
+
+
+
+//多级表格弹窗样式覆盖
+.multiTable-pop-up{
+  .el-tabs__header{
+    .el-tabs__nav-scroll{
+      div{
+        font-size: $btn-font-size;
+      }
+    }
+  }
+  .el-dialog__body{
+    //去除tabs多余代码
+    padding: 10px;
+    .el-tabs__content{
+      display: none;
+    }
+    
+      //修改复选框checkbox样式为单选框
+    .el-table .el-checkbox__inner{
+      border-radius: 50% !important;
+    }
+    
+  }
+
+  //设置选择框样式
+    .tab-telInput{
+      margin-bottom: $margin-btm;
+      .el-input{
+          width: 25%;
+          vertical-align: bottom;
+          padding-right: 5px;
+      }
+      .columnName{
+          height: $btn-height;
+          font-size: $btn-font-size;
+
+      }  
+  }
+
+
+  .el-tabs{
+    height: $pop-multiTable-tabhegiht;
+  }
+
+  .baseTypeStyle{
+    .el-table{
+      height: 353px !important;
+    }
+  }
+  //侧边框线
+  .el-tabs__nav-wrap::after{
+    width: 1px;
+  }
+}
+
+
+
+//角色分配弹窗样式
+.role-pop-up {
+  .el-dialog{
+    width: $pop-role !important;
+  }
+  .el-dialog__header{
+    padding: 10px 30px 10px 10px; 
+    background: $pop-bgcolor;
+    border-bottom: $pop-border;
+    span{
+      font-size: $pop-header-fontSize;
+    }
+  }
+  .el-dialog__body{
+    padding:10px;
+    .el-transfer{
+      //标题字体
+      span{
+        font-size: $btn-font-size;
+      }
+      //内容字体
+      .el-checkbox__label{
+        font-size: 13px;
+      }
+
+      //字体hover、focus样式
+      .el-transfer-panel__item:hover{
+        color: $btn-bgColor;
+      }
+      .el-checkbox__input.is-checked+.el-checkbox__label{
+        color: $btn-bgColor;
+      }
+      .el-transfer__button{
+        background: $btn-bgColor;
+        border-color: $btn-bgColor;
+      }
+       //覆盖左侧checkbox选择框样式
+       .el-checkbox__inner{
+        width: $tab-checkbox-size;
+        height: $tab-checkbox-size;
+        border-radius:5px;
+        right: 3px;
+        &::after{
+          left: 6px;
+          top: 3px;
+          border-width: 2px;
+        }
+        &::before{
+          top:7px;
+        }
+      }
+
+      //覆盖左侧checkbox选择框选择样式
+      .el-checkbox__input.is-checked .el-checkbox__inner, 
+      .el-checkbox__input.is-indeterminate .el-checkbox__inner{
+        background-color: $btn-bgColor;
+        border-color: $btn-bgColor;
+      }
+      
+      //覆盖左侧checkbox选择框hover样式
+      .el-checkbox__inner:hover {
+        border-color: $btn-bgColor;
+      }
+    }
+  }
+  .el-dialog__footer{
+    padding: 0 10px 10px;
+    .el-button{
+      padding: 0;
+      font-size: $btn-font-size;
+      span{
+        height: $btn-height;
+        width: $btn-width;
+        display: inline-block;
+        line-height: $btn-height;
+      }
+    }
+    .el-button+.el-button{
+      margin-left: $btn-margin-left;
+    }
+    .el-button--primary{
+      background-color: $btn-bgColor;
+      border-color: $btn-bgColor;
+      }
+   }
+}
+
+
+//图标选择样式
+#icon-pop-up{
+  .el-dialog{
+    width: 800px;
+    height: 70%;
+    overflow:hidden;
+  }
+  .el-dialog__header{
+    padding: 10px 30px 10px 10px; 
+    background: $pop-bgcolor;
+    border-bottom: $pop-border;
+    span{
+      font-size: $pop-header-fontSize;
+    }
+  }
+
+  .el-dialog__body{
+    padding:20px;
+    height: 558px;
+    overflow: auto;
+    .icon-space{
+      border-bottom: 1px solid #D8DCE5;
+      width: 720px;
+      margin: 0 auto;
+      padding-bottom:5px;      
+      margin-bottom: 20px;
+      font-size: 15px;
+      max-height: 660px;
+    }
+    .icon-top{
+      margin-top: 10px;
+    }
+    .el-row{
+      .el-col:last-child{
+        width: 22%;
+      }
+      .el-col{
+        margin-bottom: 8px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding-left: 25px;
+         i:hover{
+          transform: scale(1.2, 1.2);
+          color: #4AB6FF;
+        }
+        i{
+          font-size: 13px;
+          display: inline-block;
+          transition: all .2s linear;
+          font-weight: inherit;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .el-dialog__footer{
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    background: #fff;
+    width: 100%;
+    .el-button{
+      padding: 0;
+      font-size: $btn-font-size;
+      span{
+        height: $btn-height;
+        width: $btn-width;
+        display: inline-block;
+        line-height: $btn-height;
+      }
+    }
+    .el-button+.el-button{
+      margin-left: $btn-margin-left;
+    }
+    .el-button--primary{
+      background-color: $btn-bgColor;
+      border-color: $btn-bgColor;
+      }
+   }
+}
+
+
+
+//树表格布局、样式
+.contentTreeOrTable{
+  position: relative;
+  .treeListContent{
+    width: 170px;
+    position: absolute;
+    top: 1px;
+    .ztreeOutline{
+     min-height: 300px;
+     height: calc(100vh - 116px);
+      .ztree{
+        overflow: auto;
+        width: 157px;
+        min-height: 290px;
+        height: calc(100vh - 170px);
+      }
+    }
+  }
+  .tableAndForm{
+   margin-left: 180px;
+  }
+}
+
+
+//修改下拉列表字体样式
+.el-select-dropdown{
+  .el-select-dropdown__item{
+    font-size: $tab-font-size;
+  }
+}
+
+
+
+// elementUi 主子表高度自适应
+@media screen  and (min-height:950px){
+ 
+  //  主子表高度自适应
+   #masterTableStyle{
+    .tableOrPageSort{
+      .el-table{
+        height: 39.3vh;
+      }
+    }
+    .childTableOrPageSort{
+      .el-table{
+        height: 38vh;
+      }
+     }
+   }
+ }
+ 
+ 
+ @media screen and (max-height:950px) {
+ 
+  //  master style height auto
+   #masterTableStyle{
+    .tableOrPageSort{
+      .el-table{
+        height: 38vh;
+      }
+    }
+    .childTableOrPageSort{
+      .el-table{
+        height: 36vh;
+      }
+    }
+   }
+ }
+ 
+ 
+ 
+ @media screen  and (max-height:900px){
+    //  master style height auto
+     #masterTableStyle{
+      .tableOrPageSort{
+        .el-table{
+          height: 37.2vh;
+        }
+      }
+      .childTableOrPageSort{
+        .el-table{
+          height: 35.5vh;
+        }
+      }
+    }
+ } 
+ 
+ @media screen  and (max-height:850px){
+  //  master style height auto
+   #masterTableStyle{
+    .tableOrPageSort{
+      .el-table{
+        height: 36.4vh;
+      }
+    }
+    .childTableOrPageSort{
+      .el-table{
+        height: 34.5vh;
+      }
+    }
+   } 
+ }
+ 
+ @media screen  and (max-height:800px){
+ 
+    // master style height auto
+    #masterTableStyle{ 
+      .tableOrPageSort{
+        .el-table{
+          height: 35.5vh;
+        }
+      }
+      .childTableOrPageSort{
+        .el-table{
+          height: 33vh;
+        }
+      }
+    }
+
+ }
+ 
+ @media screen and (max-height:768px) {
+      // master style height auto
+
+      #masterTableStyle{
+        .tableOrPageSort{
+          .el-table{
+            height: 35vh;
+          }
+        }
+        .childTableOrPageSort{
+          .el-table{
+            height: 32vh;
+          }
+        }
+     }
+ }
+ 
+ 
+ @media screen and (max-height:710px) {
+   //master style height auto
+
+   #masterTableStyle{
+    .tableOrPageSort{
+      .el-table{
+        height: 33.6vh;
+      }
+    }
+    .childTableOrPageSort{
+      .el-table{
+        height: 30vh;
+      }
+    }
+  }
+ } 
+ 
+ @media screen and (max-height:650px) {
+   //master style height auto
+   #masterTableStyle{
+    .tableOrPageSort{
+      .el-table{
+        height: 32.3vh;
+      }
+    }
+    .childTableOrPageSort{
+      .el-table{
+        height: 30vh;
+      }
+    }
+   }
+ }
+ 
+ 
+ @media screen and (max-height:600px) {
+   //master style height auto
+   #masterTableStyle{
+    .tableOrPageSort{
+      .el-table{
+        height: 30.5vh;
+      }
+    }
+    .childTableOrPageSort{
+      .el-table{
+        height: 28.5vh;
+      }
+    }
+  }  
+}
+.battery-table{
+  .el-dialog__body {
+    .tableOrPageSort .el-table {
+      height: 345px !important;
+  }
+}
+  .tab-telInput{
+    .el-col{
+      width: 100%;
+      input:first-child{
+        float: left;
+      }
+     input:last-child{
+       float: right;
+     }
+    }
+    input{
+      font-size: 12px;
+    }
+  }
+
+  .el-table__body-wrapper{
+    height: 312px !important;
+    overflow: hidden;
+  }
+}
+//审批意见
+.approve{
+  .el-dialog{
+    width: 400px !important;
+  }
+}
+   

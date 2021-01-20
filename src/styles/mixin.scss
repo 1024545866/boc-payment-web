@@ -1,0 +1,101 @@
+//顶部导航的高度
+$top-height : 60px;
+$left-width : 200px;
+$top-bagColor:#1A233D;
+$top-bagHover:#315998;
+$left-bagColor:#293846;
+$left-showColor:#2a3f54;
+$left-bagHover:#00C1DE;
+$minContentPadding:95px;
+$min-width:980px;
+//重置
+// .el-menu--horizontal .el-menu-item,
+// .el-menu--horizontal .el-submenu,
+// .el-menu--horizontal .el-submenu .el-submenu__title,
+.el-menu-item, .el-submenu__title,
+.left-menuShow .menu-show{
+  height: 40px;
+  line-height: 40px;
+  width: 100%;
+  border-bottom: none;
+  font-size: 13px;
+}
+.el-menu-item *,
+.el-submenu__title *{
+  vertical-align: baseline;
+}
+.el-submenu__title i{
+  color: #ffffff;
+}
+// .el-menu--horizontal .el-submenu .el-submenu__icon-arrow{
+//   // position: none;
+//   vertical-align: baseline;
+//   position: absolute;
+//   top: 18px;
+//   right: 13px;
+// }
+.el-menu-item-group__title{
+  display: none;
+}
+
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin scrollBar {
+  &::-webkit-scrollbar-track-piece {
+    background: #d3dce6;
+  }
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #99a9bf;
+    border-radius: 20px;
+  }
+}
+
+@mixin relative {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin pct($pct) {
+  width: #{$pct};
+  position: relative;
+  margin: 0 auto;
+}
+
+@mixin triangle($width, $height, $color, $direction) {
+  $width: $width/2;
+  $color-border-style: $height solid $color;
+  $transparent-border-style: $width solid transparent;
+  height: 0;
+  width: 0;
+  @if $direction==up {
+    border-bottom: $color-border-style;
+    border-left: $transparent-border-style;
+    border-right: $transparent-border-style;
+  }
+  @else if $direction==right {
+    border-left: $color-border-style;
+    border-top: $transparent-border-style;
+    border-bottom: $transparent-border-style;
+  }
+  @else if $direction==down {
+    border-top: $color-border-style;
+    border-left: $transparent-border-style;
+    border-right: $transparent-border-style;
+  }
+  @else if $direction==left {
+    border-right: $color-border-style;
+    border-top: $transparent-border-style;
+    border-bottom: $transparent-border-style;
+  }
+}

@@ -1,0 +1,372 @@
+@import './mixin.scss';
+@import './allTable-ui.scss';
+
+
+//公共的样式
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font:13px/15px Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+  color: #87929d;
+  padding-right: 0px !important;
+}
+
+html {
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: 20px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+*,
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.center{
+  text-align:center;
+}
+
+.is-block {
+  display: block;
+}
+
+
+.text-right{
+  text-align: right;
+}
+
+.hidden {
+  display: none ;
+}
+
+/*滚动条相关*/
+::-webkit-scrollbar-track {
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: #F5F5F5;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0;
+  border-radius:4px;
+}
+
+
+
+//路由跳转过渡效果
+.fade-enter-active,
+.fade-leave-active {
+  transition: all .4s ease
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+
+
+//AppMain
+#content-fixed {
+  margin:10px;
+  height: calc(100vh - 107px);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+
+.v-modal{
+  z-index: 2000 !important;//解决弹出框遮罩层覆盖的问题
+}
+
+
+.el-checkbox__original {
+  left: 0;
+  position: relative;
+  height: 0 !important;
+}
+
+
+//覆盖树表默认样式
+.ztree{
+  margin:0; 
+  color:#333; 
+  margin-top: 10px;
+  padding: 0;
+  li{
+    padding:0; 
+    margin:0; 
+    list-style:none; 
+    text-align:left; white-space:nowrap; 
+    outline:0; 
+    position: relative; 
+    left: -20px;
+    top: -5px;
+    padding-top: 5px;
+  }
+
+ li ul {  
+    margin: 0;
+    padding:5px 0 0 30px;
+    width: 170px;
+}
+
+//修改字体样式
+ *{
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+}
+
+li a {
+  padding:0; 
+  margin:0; 
+  cursor:pointer; 
+  height:17px; 
+  color:#3e4148; 
+  background-color: transparent;
+}
+
+//修改鼠标经过的字体样式,获取焦点的样式
+li a:hover {
+  color:#4Ab6ff;
+  text-decoration: none;
+}
+
+//修改背景图片
+li span.button {
+    background-image:url("~static/images/ztree_images/ztree.png");
+  }
+
+
+//覆盖ztree复选框的位置和样式
+  li span.button.chk {
+    width:20px; 
+    height:20px; 
+    cursor: auto; 
+    position: relative;
+    left: 15px;
+    bottom: 2px;
+  }
+
+
+  //修改checkbox图片定位的位置
+  li span.button.chk.checkbox_false_full {
+    background-position:-2px -2px;
+  }
+
+  li span.button.chk.checkbox_false_full_focus {
+    background-position:-21px -2px;
+  }
+
+  li span.button.chk.checkbox_true_full {
+    background-position:-40px -2px;
+  }
+
+  li span.button.chk.checkbox_true_full_focus {
+    background-position:-40px -2px;
+  }
+
+  li span.button.chk.checkbox_true_part {
+    background-position:-60px -2px;
+  }
+
+  li span.button.chk.checkbox_true_part_focus {
+    background-position:-60px -2px;
+  }
+
+  //覆盖子节点图标的定位位置
+  li span.button.switch {
+    width:20px; 
+    height:20px; 
+    position: relative;
+    left: 16px;
+    z-index: 20;
+  }
+
+  li span.button.root_open{
+    background-position:-2px -34px;
+  }
+
+  li span.button.root_close{
+    background-position:-2px -20px;
+  }
+
+  li span.button.roots_open{
+    background-position:-8px -14px;
+  }
+
+  li span.button.roots_close{
+    background-position:-8px -0px;
+  }
+
+  li span.button.center_open{
+    background-position:-2px -34px;
+  }
+
+  li span.button.center_close{
+    background-position:-2px -20px;
+  }
+
+  li span.button.bottom_open{
+    background-position:-2px -34px;
+  }
+
+  li span.button.bottom_close{
+    background-position:-2px -20px;
+  }
+
+  li span.button.center_docu{
+    background-position:50px;
+  }
+
+  li span.button.bottom_docu{
+    background-position:50px;
+  }
+
+  li span.button.roots_open{
+    background-position: -2px -34px;
+  }
+
+  li span.button.roots_close {
+    background-position: -2px -20px;
+  }
+
+ li span.button.roots_docu {
+    background-position: -80px 0;
+}
+
+  //覆盖点击字体背景样式
+  li a.curSelectedNode{
+    background:none;
+    border: none;
+    color: #4Ab6ff;
+    position: absolute;
+  }
+
+  //去除背景图片
+  li ul.line {
+      background-image: none;
+  }
+}
+
+
+//修改默认下拉框样式
+.el-dropdown-menu{
+  li{
+    line-height: 30px;
+  }
+  span{
+    font-size: 12px;
+  }
+}
+
+//设置 表格初始背景颜色
+.el-table tr {
+  background-color: #fff;
+  transition: background-color .4s cubic-bezier(0.39, 0.58, 0.57, 1);
+} 
+
+//添加class样式
+tr.select-row{
+  background: #F5F7FA;
+}
+
+i.select-icon{
+  color: #4Ab6ff;
+}
+
+/*********控制主子表页面翻转子表表格样式控制*****************/
+
+//控制主子表单的高度
+.formAutoEnd{
+  height: $form-height-after !important;
+}
+
+
+.isHidden{
+  border: none !important;
+  height:calc(100vh - 115px)!important;
+}
+
+
+//跳转页面改变子表的高度
+.childTableOutline{
+  border: 1px solid #d8dce5;
+  height: calc(100vh - 390px);
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+//控制主子表页面翻转，表单中表格的高度
+.tabHightAuto{
+  height: calc(100vh - 434px) !important;
+}
+
+
+//去除主子表表头默认hidden，修改样式
+#masterTableStyle {
+  .el-table__footer-wrapper, .el-table__header-wrapper {
+    overflow: visible;
+  }
+  
+  .el-table__body-wrapper {
+    overflow: visible;
+  }
+
+  .el-table {
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+}
+
+.box-card {
+  width: 780px;
+  box-shadow: none !important;
+}
+
+ .changePsd {
+     .el-form-item{
+         width: 100%;
+         .el-form-item__label{
+             min-width: 100px !important;
+         }
+         .el-form-item__content{
+             width: 70%;
+         }
+     }
+ }
+
+//测试页面，隐藏input框
+
+ #fileUploadForm {
+  input{
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+  }
+}
